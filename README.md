@@ -17,29 +17,29 @@ Azure CycleCloudのデモ環境と、HPC初心者向けハンズオン一式で�
 ### 全体構成
 
 - 管理系
-	- CycleCloud管理VM (Web UI/管理プレーン)
-	- User Assigned Managed Identity
-	- Key Vault (シークレット管理)
-	- Storage Account (ログ・資材置き場)
+  - CycleCloud管理VM (Web UI/管理プレーン)
+  - User Assigned Managed Identity
+  - Key Vault (シークレット管理)
+  - Storage Account (ログ・資材置き場)
 - ネットワーク
-	- VNet `10.40.0.0/16`
-	- 管理サブネット `10.40.1.0/24`
-	- 計算サブネット `10.40.2.0/24`
-	- NSG (443/22を許可)
+  - VNet `10.40.0.0/16`
+  - 管理サブネット `10.40.1.0/24`
+  - 計算サブネット `10.40.2.0/24`
+  - NSG (443/22を許可)
 - 計算系
-	- PBSまたはSlurmクラスター
-	- 要求時に計算ノードを自動起動、アイドル時に自動停止
+  - PBSまたはSlurmクラスター
+  - 要求時に計算ノードを自動起動、アイドル時に自動停止
 
 ### 代表的な利用パターン
 
 - PoC/ハンズオン最小構成
-	- Scheduler: `Standard_D4s_v5`
-	- Compute: `Standard_HB120rs_v3` もしくは在庫のあるHPC向けサイズ
-	- Max Core Count: 小さめ (例: 120)
+  - Scheduler: `Standard_D4s_v5`
+  - Compute: `Standard_HB120rs_v3` もしくは在庫のあるHPC向けサイズ
+  - Max Core Count: 小さめ (例: 120)
 - 拡張構成 (段階2)
-	- パーティション/キュー分離
-	- 複数VM SKU混在
-	- コスト上限と優先度ポリシーの導入
+  - パーティション/キュー分離
+  - 複数VM SKU混在
+  - コスト上限と優先度ポリシーの導入
 
 詳細は `Doc/05-architecture-and-config.md` を参照してください。
 
